@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_st_hr_loan_list" model="ir.ui.view">
+        <field name="name">st.hr.loan.list</field>
+        <field name="model">st.hr.loan</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="department_id"/>
+                <field name="loan_amount"/>
+                <field name="total_repayable"/>
+                <field name="total_paid"/>
+                <field name="balance"/>
+
+                <field name="state"
+                       widget="badge"
+                       decoration-success="state in ('repaid','closed')"
+                       decoration-warning="state == 'repaying'"
+                       decoration-info="state in ('approved','disbursed')"
+                       decoration-danger="state == 'refused'"
+                       decoration-muted="state == 'draft'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_st_hr_loan_form" model="ir.ui.view">
+        <field name="name">st.hr.loan.form</field>
+        <field name="model">st.hr.loan</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_submit" string="Submit" type="object"
+                            class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_approve" string="Approve" type="object"
+                            class="btn-primary" groups="st_hr_loan.group_hr_loan_manager,st_hr_loan.group_hr_loan_officer"
+                            invisible="state != 'submitted'"/>
+                    <button name="action_disburse" string="Disburse" type="object"
+                            class="btn-primary" groups="st_hr_loan.group_hr_loan_manager,st_hr_loan.group_hr_loan_officer"
+                            invisible="state != 'approved'"/>
+                    <button name="action_close" string="Close" type="object"
+                            groups="st_hr_loan.group_hr_loan_manager,st_hr_loan.group_hr_loan_officer"
+                            invisible="state != 'repaid'"/>
+                    <button name="action_refuse" string="Refuse" type="object"
+                            groups="st_hr_loan.group_hr_loan_manager,st_hr_loan.group_hr_loan_officer"
+                            invisible="state != 'submitted'"/>
+                    <button name="action_reset_to_draft" string="Reset to Draft"
+                            type="object"
+                            invisible="state != 'refused'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,submitted,approved,disbursed,repaying,repaid,closed"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="employee_id"
+                                   readonly="state != 'draft'"/>
+                            <field name="department_id"/>
+                            <field name="start_date"
+                                   readonly="state != 'draft'"/>
+                            <field name="is_salary_advance" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="loan_type_id" force_save="1"
+                                   readonly="state != 'draft'"/>
+<!--                            <field name="loan_amount"-->
+<!--                                   readonly="state != 'draft'"/>-->
+                            <field name="loan_amount"
+                                   string="Loan Amount"
+                                   invisible="is_salary_advance == True"
+                                   readonly="state != 'draft'"/>
+                            <field name="loan_amount"
+                                   string="Advance Amount"
+                                   invisible="is_salary_advance == False"
+                                   readonly="state != 'draft'"/>
+                            <field name="interest_rate"
+                                   readonly="1" />
+                            <field name="installment_count"
+                                   readonly="state != 'draft'"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="total_repayable"/>
+                        <field name="total_paid"/>
+                        <field name="balance"/>
+                    </group>
+                    <notebook>
+                        <page string="Repayment Schedule">
+                            <field name="repayment_line_ids" readonly="1">
+                                <list editable="bottom" create="0" delete="0">
+                                    <field name="sequence"/>
+                                    <field name="due_date"/>
+                                    <field name="amount"/>
+                                    <field name="paid"/>
+                                    <button name="action_mark_paid"
+                                            string="Mark Paid" type="object"
+                                            icon="fa-check"
+                                            invisible="paid == True"
+                                            groups="st_hr_loan.group_hr_loan_manager,st_hr_loan.group_hr_loan_officer"/>
+                                    <button name="action_mark_unpaid"
+                                            string="Undo" type="object"
+                                            icon="fa-undo"
+                                            invisible="paid == False"
+                                            groups="st_hr_loan.group_hr_loan_manager,st_hr_loan.group_hr_loan_officer"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Reason">
+                            <field name="reason" nolabel="1"
+                                   placeholder="Why is this loan being requested?"/>
+                        </page>
+
+                        <page string="Documents"  invisible="is_salary_advance == True">
+                            <field name="document_ids" force_save="1">
+                                <list editable="bottom" create="0" delete="0">
+                                    <field name="document_type_id" column_invisible="1"/>
+                                    <field name="name"/>
+                                    <field name="attachment_ids" widget="many2many_binary"
+                                           options="{'number_of_files': 1}"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_st_hr_loan_search" model="ir.ui.view">
+        <field name="name">st.hr.loan.search</field>
+        <field name="model">st.hr.loan</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="department_id"/>
+                <filter string="My Loans" name="my_loans"
+                        domain="[('employee_id.user_id', '=', uid)]"/>
+                <separator/>
+                <filter string="Draft" name="draft" domain="[('state','=','draft')]"/>
+                <filter string="Submitted" name="submitted" domain="[('state','=','submitted')]"/>
+                <filter string="Approved" name="approved" domain="[('state','=','approved')]"/>
+                <filter string="Disbursed" name="disbursed" domain="[('state','=','disbursed')]"/>
+                <filter string="Repaying" name="repaying" domain="[('state','=','repaying')]"/>
+                <filter string="Repaid" name="repaid" domain="[('state','=','repaid')]"/>
+                <filter string="Closed" name="closed" domain="[('state','=','closed')]"/>
+                <group>
+                    <filter string="Employee" name="group_employee" context="{'group_by':'employee_id'}"/>
+                    <filter string="Department" name="group_department" context="{'group_by':'department_id'}"/>
+                    <filter string="Status" name="group_state" context="{'group_by':'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_st_hr_loan" model="ir.actions.act_window">
+        <field name="name">Loans</field>
+        <field name="res_model">st.hr.loan</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_st_hr_loan_search"/>
+        <field name="context">{'search_default_my_loans': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new loan request
+            </p>
+        </field>
+    </record>
+
+</odoo>

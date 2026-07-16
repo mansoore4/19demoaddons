@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HR Loan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <style>
+        :root {
+          --primary-color: #7f54b3;
+          --bg-white: #fff;
+          --text-color: #121212;
+          --text-color-light: #64728f;
+        }
+        body { font-family: "Montserrat", sans-serif; }
+        .bg-image { pointer-events: none; }
+        .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+            color: var(--text-color);
+            font-family: Montserrat;
+            font-size: 16px !important;
+            font-weight: 500 !important;
+            border-radius: 30px;
+            line-height: normal;
+            text-transform: capitalize;
+            background-color: #F5F5F5;
+            border: none;
+            margin-bottom: 0;
+            padding: 12px 24px;
+        }
+        .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover { border-color: transparent; isolation: isolate; }
+        .nav-tabs .nav-link:focus-visible { border-color: transparent; box-shadow: none; }
+        .service-card {
+            text-align: center;
+            padding: 25px;
+            border-radius: 12px;
+            background: #f8f9fc;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .service-card:hover { background: #7f54b3; color: #fff; transform: translateY(-5px); }
+        .service-icon { width: 60px; height: 60px; object-fit: contain; display: block; margin: 0 auto 15px; }
+        .services-page { padding: 60px 40px; background: #fff; }
+        .section-title { font-size: 36px; font-weight: 700; margin-bottom: 40px; }
+        .report-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f0ebfa;
+            color: var(--primary-color);
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 6px 4px;
+        }
+        .report-badge i { font-size: 13px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="my-5">
+
+        <div class="supports my-5 py-3" style="border-bottom: 1px solid #e7e7e7;">
+            <div class="row justify-content-between">
+                <div class="col-4"></div>
+                <div class="col-6"></div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                <!-- Hero Banner -->
+                <div class="position-relative" style="border-radius: 16px; background: #f8f8f8; padding: 20px 0;">
+                    <div class="row" style="padding: 2rem 0rem 0 !important;">
+                        <div class="col-lg-8 mx-auto gap-4 d-flex flex-column align-items-center">
+                            <p class="my-1 text-center text-uppercase" style="
+                                letter-spacing: 4px !important;
+                                color: var(--primary-color);
+                                font-weight: bold;
+                                text-align: center;
+                                font-size: 14px;
+                                font-weight: 600;
+                                line-height: 15.96px;
+                                text-transform: uppercase;">
+                                Manage employee loans and salary advances with automated approvals, disbursements, repayment schedules, and loan tracking directly from Odoo HR.
+                            </p>
+                            <h1 class="text-center text-uppercase my-0" style="
+                                color: var(--text-color);
+                                font-size: 46px;
+                                font-weight: 700;
+                                line-height: normal;">
+                                HR Loan
+                            </h1>
+                        </div>
+                        <div class="col-lg-12 d-flex justify-content-center align-items-center gap-4" style="margin: 3rem 0;">
+                            <img src="./assets/icons/steigend-logo.png" style="height: 91px; width: auto;" class="img-responsive"/>
+                            <div style="width: 1px; height: 70px; background: #ddd;"></div>
+                            <img src="./assets/icons/odoo_silver_partner_rgb.png" style="height: 75px; width: auto;" class="img-responsive" alt="Odoo Silver Partner"/>
+                        </div>
+                    </div>
+                    <div class="position-absolute bottom-0 bg-image" style="z-index: 1; width: 100%;">
+                        <img src="./assets/icons/banner-bg.svg" class="img-fluid w-100">
+                    </div>
+                    <div class="position-absolute bottom-0 end-0 bg-image" style="z-index: 2;">
+                        <img src="./assets/icons/patter.svg">
+                    </div>
+                </div>
+
+                <!-- Black Banner -->
+                <div class="my-5">
+            <div class="position-relative" style="padding: 5rem 4rem; background-color: #0A1425; border-radius: 12px;">
+                <div class="d-flex flex-column gap-4">
+                    <span style="font-size: 40px; font-weight: 700; color: #fff; line-height: 60px; text-transform: capitalize; width: 450px; font-family: Montserrat;"> HR Loan Management</span>
+                    <h3 style="font-size: 20px; font-weight: 400; color: #fff; line-height: 32px;">
+                        Are you ready to make your business more organized?<br>Improve now!
+                    </h3>
+                    <div class="d-flex gap-3">
+                        <a href="mailto:contact@steigendit.com" style="cursor: pointer; border-radius: 16px; display: flex; justify-content: center; align-items: center; gap: 7px; border: 1px solid #ffffff33; background-color: #ffffff14; backdrop-filter: blur(10px); color: #fff; padding: 12px 16px; text-decoration: none;">
+                            <span style="border-radius: 12px; background-color: #ffffff1a; backdrop-filter: blur(6px); padding: 12px;">
+                                <img src="./assets/icons/banner-mail.svg">
+                            </span>
+                            <span style="font-weight: 500; font-family: Montserrat;">contact@steigendit.com</span>
+                        </a>
+                        <a href="tel:+919746096939" style="cursor: pointer; border-radius: 16px; display: flex; justify-content: center; align-items: center; gap: 7px; border: 1px solid #ffffff33; background-color: #ffffff14; backdrop-filter: blur(10px); color: #fff; padding: 12px 22px 12px 18px; text-decoration: none;">
+                            <span style="border-radius: 12px; background-color: #ffffff1a; backdrop-filter: blur(6px); padding: 12px;">
+                                <img src="./assets/icons/banner-call.svg">
+                            </span>
+                            <span style="font-weight: 500; font-family: Montserrat;">+91 9746096939</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="position-absolute bottom-0 end-0">
+                    <img src="./assets/icons/banner-pattern.svg" style="width: 540px;">
+                </div>
+            </div>
+        </div>
+
+                <!-- Key Highlights -->
+                <div style="border-radius: 16px; padding: 60px 40px; border: 1px solid #EBEEF2; background: #F5F5F7; box-shadow: 0px 5px 20px -11px rgba(0,0,0,0.25);">
+                    <div class="row">
+                        <div class="col-lg-12 d-flex flex-column justify-content-center align-items-center">
+                            <h2 style="color: var(--text-color); text-align: center; font-size: 40px; font-weight: 700; text-transform: uppercase; padding-bottom: 50px;">
+                                Key Highlights</h2>
+                        </div>
+
+                        <!-- Highlight 1 -->
+                        <div class="col-lg-4">
+                            <div class="mb-4 d-flex flex-column justify-content-center gap-3"
+                                 style="border-radius: 12px; border: 1px solid #B6BCCD; background: #FFF; padding: 32px;">
+                                <div class="d-flex justify-content-center align-items-center"
+                                     style="background-color:#7847D9 !important; border-radius:8px !important; height:42px; width:42px">
+                                    <img src="./assets/icons/feature-icon.svg" class="img-responsive" height="26px" width="26px">
+                                </div>
+                                <h5 class="m-0" style="color:#000 !important; font-weight:bold">Loan Request Workflow</h5>
+                                <p class="m-0" style="font-size: 16px; font-weight: 400; color: var(--text-color-light);">
+                                    Employees can request loans or salary advances through a structured workflow:
+                                     Draft → Submitted → Approved → Disbursed → Closed.
+                                     Refusal is supported from Submitted and Approved stages.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Highlight 2: Salary Advance -->
+                        <div class="col-lg-4">
+                            <div class="mb-4 d-flex flex-column justify-content-center gap-3"
+                                 style="border-radius: 12px; border: 1px solid #B6BCCD; background: #FFF; padding: 32px;">
+                                <div class="d-flex justify-content-center align-items-center"
+                                     style="background-color:#7847D9 !important; border-radius:8px !important; height:42px; width:42px">
+                                    <img src="./assets/icons/feature-icon.svg" class="img-responsive" height="26px"
+                                         width="26px">
+                                </div>
+                                <h5 class="m-0" style="color:#000 !important; font-weight:bold">Salary Advance
+                                    Support</h5>
+                                <p class="m-0"
+                                   style="font-size: 16px; font-weight: 400; color: var(--text-color-light);">
+                                    Mark a loan type as Salary Advance to enable a simplified single-installment flow.
+                                    The form auto-hides interest rate, documents, and max amount fields, keeping the
+                                    process clean and fast.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Highlight 3 -->
+                        <div class="col-lg-4">
+                            <div class="mb-4 d-flex flex-column justify-content-center gap-3"
+                                 style="border-radius: 12px; border: 1px solid #B6BCCD; background: #FFF; padding: 32px;">
+                                <div class="d-flex justify-content-center align-items-center"
+                                     style="background-color:#7847D9 !important; border-radius:8px !important; height:42px; width:42px">
+                                    <img src="./assets/icons/feature-icon.svg" class="img-responsive" height="26px" width="26px">
+                                </div>
+                                <h5 class="m-0" style="color:#000 !important; font-weight:bold">Automated Repayment Schedule</h5>
+                                <p class="m-0" style="font-size: 16px; font-weight: 400; color: var(--text-color-light);">
+                                    Generate installment schedules automatically based on loan amount, interest rate, and installment count. Track repayments directly from the loan record.
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <!-- Highlight 4 -->
+                        <div class="col-lg-4">
+                            <div class="mb-4 d-flex flex-column justify-content-center gap-3"
+                                 style="border-radius: 12px; border: 1px solid #B6BCCD; background: #FFF; padding: 32px;">
+                                <div class="d-flex justify-content-center align-items-center"
+                                     style="background-color:#7847D9 !important; border-radius:8px !important; height:42px; width:42px">
+                                    <img src="./assets/icons/feature-icon.svg" class="img-responsive" height="26px" width="26px">
+                                </div>
+                                <h5 class="m-0" style="color:#000 !important; font-weight:bold">Loan Type Configuration</h5>
+                                <p class="m-0" style="font-size: 16px; font-weight: 400; color: var(--text-color-light);">
+                                    Configure multiple loan types with default interest rates, required documents, and company-specific loan policies.
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- Screenshots Section -->
+                <div class="mb-4 bg-white mt-5"
+                     style="border: 1px solid #EBEEF2; border-radius: 6px; box-shadow: 0px 8px 20px -4px rgba(0,0,0,0.10);">
+
+                    <!-- TAB MENU -->
+                    <div>
+                        <ul class="nav nav-tabs justify-content-center bg-white py-2" id="myTab" role="tablist" style="border-radius: 6px 6px 0 0;">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview"
+                                        type="button" role="tab" aria-controls="overview" aria-selected="true"
+                                        style="color:#121212; font-weight:500; font-size:16px">
+                                    Screenshots
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="feature-tab" data-bs-toggle="tab" data-bs-target="#feature"
+                                        type="button" role="tab" aria-controls="feature" aria-selected="false"
+                                        style="color:#121212; font-weight:500; font-size:16px">
+                                    Features
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="releases-tab" data-bs-toggle="tab" data-bs-target="#releases"
+                                        type="button" role="tab" aria-controls="releases" aria-selected="false"
+                                        style="color:#121212; font-weight:500; font-size:16px">
+                                    Releases
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- TAB CONTENT -->
+                    <div class="tab-content p-md-5 p-2 py-3" id="myTabContent2">
+
+                        <!-- SCREENSHOTS TAB -->
+                        <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+
+                            <!-- Screenshot 1: Loan Type Configuration (Normal Loan) -->
+                            <div class="position-relative mb-4" style="border-radius:10px; background-color:#f4f4f4">
+                                <div class="p-md-5 p-3">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h1 style="text-align:center; font-weight:700;">
+                                                Loan Type Configuration (Normal Loan)
+                                            </h1>
+                                        </div>
+                                        <div class="col-md-12 mb-4">
+                                            <p style="font-weight:400; font-size:16px; line-height:150%; text-align:center; color:#64728f">
+                                                Configure loan types with interest rates, maximum loan amounts,
+                                                and required document checklists. Each document can be marked as mandatory to enforce uploads before loan submission.
+                                            </p>
+                                        </div>
+                                        <div class="col-md-12 text-center">
+                                            <div class="d-inline-block p-3 shadow-sm" style="background-color:#fff; border-radius:10px">
+                                                <img alt="HR Letter Request Form"
+                                                     class="img-fluid"
+                                                     loading="lazy"
+                                                     src="assets/screenshots/image1.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Screenshot 2: Loan Type Configuration (Salary Advance) -->
+                            <div class="position-relative mb-4" style="border-radius:10px; background-color:#f4f4f4">
+                                <div class="p-md-5 p-3">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h1 style="text-align:center; font-weight:700;">Loan Type Configuration (Salary Advance)</h1>
+                                        </div>
+                                        <div class="col-md-12 mb-4">
+                                            <p style="font-weight:400; font-size:16px; line-height:150%; text-align:center; color:#64728f">
+                                               When a loan type is marked as Salary Advance, interest rate,
+                                                maximum amount, and required document fields are automatically hidden — keeping the configuration simple and focused.
+                                            </p>
+                                        </div>
+                                        <div class="col-md-12 text-center">
+                                            <div class="d-inline-block p-3 shadow-sm"
+                                                 style="background-color:#fff; border-radius:10px">
+                                                <img alt="Salary Advance Form"
+                                                     class="img-fluid"
+                                                     loading="lazy"
+                                                     src="assets/screenshots/image2.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Screenshot 3: Employee Loan Request -->
+                            <div class="position-relative mb-4" style="border-radius:10px; background-color:#f4f4f4">
+                                <div class="p-md-5 p-3">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h1 style="text-align:center; font-weight:700;">
+                                                Employee Loan Request
+                                            </h1>
+                                        </div>
+                                        <div class="col-md-12 mb-4">
+                                            <p style="font-weight:400; font-size:16px; line-height:150%; text-align:center; color:#64728f">
+                                               Employees can submit a loan request by selecting the loan type, entering the loan amount, and specifying the number of installments. The interest rate is automatically pulled from the loan type configuration, and the total repayable amount and balance are calculated instantly. Required documents such as Aadhar Card and Salary Certificate are auto-populated in the Documents tab based on the selected loan type. When a Salary Advance type is selected, the Documents tab is hidden,
+                                                the number of installments is automatically set to 1, and any attempt to change it will trigger a validation alert — ensuring salary advances are always settled in a single payment.
+
+                                            </p>
+                                        </div>
+                                        <div class="col-md-12 text-center">
+                                            <div class="d-inline-block p-3 shadow-sm" style="background-color:#fff; border-radius:10px">
+                                                <img alt="Configuration Menu"
+                                                     class="img-fluid"
+                                                     loading="lazy"
+                                                     src="assets/screenshots/image3.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Screenshot 4: Loan Approval Process -->
+                            <div class="position-relative mb-4" style="border-radius:10px; background-color:#f4f4f4">
+                                <div class="p-md-5 p-3">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h1 style="text-align:center; font-weight:700;">
+                                                Loan Approval Process
+                                            </h1>
+                                        </div>
+                                        <div class="col-md-12 mb-4">
+                                            <p style="font-weight:400; font-size:16px; line-height:150%; text-align:center; color:#64728f">
+                                                Once an employee submits a loan request, HR managers and loan officers can review the application along with all uploaded supporting documents. The Approve and Refuse buttons are available to authorized users, allowing them to either proceed with the loan or reject it.
+                                                All actions are logged automatically in the chatter for complete audit tracking.
+                                            </p>
+                                        </div>
+                                        <div class="col-md-12 text-center">
+                                            <div class="d-inline-block p-3 shadow-sm" style="background-color:#fff; border-radius:10px">
+                                                <img alt="Letter Template Form"
+                                                     class="img-fluid"
+                                                     loading="lazy"
+                                                     src="assets/screenshots/image4.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- Screenshot 5: Letter Template Form -->
+                             <div class="position-relative mb-4" style="border-radius:10px; background-color:#f4f4f4">
+                                <div class="p-md-5 p-3">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h1 style="text-align:center; font-weight:700;">
+                                                Loan Disbursement & Repayment Schedule
+                                            </h1>
+                                        </div>
+                                        <div class="col-md-12 mb-4">
+                                            <p style="font-weight:400; font-size:16px; line-height:150%; text-align:center; color:#64728f">
+                                                Once a loan is approved and disbursed, a repayment schedule is automatically generated based on the loan amount, interest rate, and number of installments. Each installment shows the due date and amount, and can be marked as paid individually. The complete approval journey — from Draft through Submitted,
+                                                Approved, and Disbursed — is recorded in the chatter for full audit visibility.
+                                            </p>
+                                        </div>
+                                        <div class="col-md-12 text-center">
+                                            <div class="d-inline-block p-3 shadow-sm" style="background-color:#fff; border-radius:10px">
+                                                <img alt="Letter Template Form"
+                                                     class="img-fluid"
+                                                     loading="lazy"
+                                                     src="assets/screenshots/image5.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Screenshot 6: Loan List & Filters-->
+                             <div class="position-relative mb-4" style="border-radius:10px; background-color:#f4f4f4">
+                                <div class="p-md-5 p-3">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h1 style="text-align:center; font-weight:700;">
+                                                Loan List & Filters
+                                            </h1>
+                                        </div>
+                                        <div class="col-md-12 mb-4">
+                                            <p style="font-weight:400; font-size:16px; line-height:150%; text-align:center; color:#64728f">
+                                                All loan requests are displayed in a color-coded list view for quick status identification. Use the built-in filters to view loans by status — Draft, Submitted, Approved, Disbursed, Repaying, Repaid, or Closed. Group loans by Employee, Department, or Status for better visibility. The "My Loans" filter is applied by default,
+                                                so employees see only their own requests.
+                                            </p>
+                                        </div>
+                                        <div class="col-md-12 text-center">
+                                            <div class="d-inline-block p-3 shadow-sm" style="background-color:#fff; border-radius:10px">
+                                                <img alt="Letter Template Form"
+                                                     class="img-fluid"
+                                                     loading="lazy"
+                                                     src="assets/screenshots/image6.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Screenshot 7: Letter Template Form -->
+                             <div class="position-relative mb-4" style="border-radius:10px; background-color:#f4f4f4">
+                                <div class="p-md-5 p-3">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h1 style="text-align:center; font-weight:700;">
+                                                Loan Closure
+                                            </h1>
+                                        </div>
+                                        <div class="col-md-12 mb-4">
+                                            <p style="font-weight:400; font-size:16px; line-height:150%; text-align:center; color:#64728f">
+                                                 Once all repayment installments are marked as paid, the loan status automatically moves to Repaid and the Balance becomes zero. The Close button becomes available to authorized users, allowing the loan to be formally closed. The complete loan lifecycle — from creation through every status change — is fully recorded in the chatter,
+                                                ensuring transparent and auditable loan management.
+                                            </p>
+                                        </div>
+                                        <div class="col-md-12 text-center">
+                                            <div class="d-inline-block p-3 shadow-sm" style="background-color:#fff; border-radius:10px">
+                                                <img alt="Letter Template Form"
+                                                     class="img-fluid"
+                                                     loading="lazy"
+                                                     src="assets/screenshots/image7.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+
+                        <!-- FEATURES TAB -->
+                        <div class="tab-pane fade" id="feature" role="tabpanel" aria-labelledby="feature-tab">
+                            <div class="row py-4">
+
+                                <div class="col-md-6 col-sm-12 p-3">
+                                    <div class="d-flex flex-column align-items-start h-100"
+                                         style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                 style="width:36px; height:36px; border-radius:50%; background-color:#7847D9; margin-right:10px">
+                                                <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                            </div>
+                                            <p style="color:#1A202C; font-weight:600; font-size:1.1rem; margin-bottom:2px">
+                                                Available for Odoo 18.0 & 19.0 Community & Enterprise.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 p-3">
+                                    <div class="d-flex flex-column align-items-start h-100"
+                                         style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                 style="width:36px; height:36px; border-radius:50%; background-color:#7847D9; margin-right:10px">
+                                                <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                            </div>
+                                            <p style="color:#1A202C; font-weight:600; font-size:1.1rem; margin-bottom:2px">
+                                                Loan workflow: Draft → Submitted → Approved → Disbursed → Repaying → Repaid → Closed
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 p-3">
+                                    <div class="d-flex flex-column align-items-start h-100"
+                                         style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                 style="width:36px; height:36px; border-radius:50%; background-color:#7847D9; margin-right:10px">
+                                                <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                            </div>
+                                            <p style="color:#1A202C; font-weight:600; font-size:1.1rem; margin-bottom:2px">
+                                                Support for multiple loan types
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 p-3">
+                                    <div class="d-flex flex-column align-items-start h-100"
+                                         style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                 style="width:36px; height:36px; border-radius:50%; background-color:#7847D9; margin-right:10px">
+                                                <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                            </div>
+                                            <p style="color:#1A202C; font-weight:600; font-size:1.1rem; margin-bottom:2px">
+                                                Automatic repayment schedule generation
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 p-3">
+                                    <div class="d-flex flex-column align-items-start h-100"
+                                         style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                 style="width:36px; height:36px; border-radius:50%; background-color:#7847D9; margin-right:10px">
+                                                <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                            </div>
+                                            <p style="color:#1A202C; font-weight:600; font-size:1.1rem; margin-bottom:2px">
+                                                Installment payment tracking
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 p-3">
+                                    <div class="d-flex flex-column align-items-start h-100"
+                                         style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                 style="width:36px; height:36px; border-radius:50%; background-color:#7847D9; margin-right:10px">
+                                                <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                            </div>
+                                            <p style="color:#1A202C; font-weight:600; font-size:1.1rem; margin-bottom:2px">
+                                                Loan balance calculation
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div class="col-md-6 col-sm-12 p-3">
+                                    <div class="d-flex flex-column align-items-start h-100"
+                                         style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                 style="width:36px; height:36px; border-radius:50%; background-color:#7847D9; margin-right:10px">
+                                                <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                            </div>
+                                            <p style="color:#1A202C; font-weight:600; font-size:1.1rem; margin-bottom:2px">
+                                                Document attachment support
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div class="col-md-6 col-sm-12 p-3">
+                                    <div class="d-flex flex-column align-items-start h-100"
+                                         style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                 style="width:36px; height:36px; border-radius:50%; background-color:#7847D9; margin-right:10px">
+                                                <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                            </div>
+                                            <p style="color:#1A202C; font-weight:600; font-size:1.1rem; margin-bottom:2px">
+                                                Employee self-service loan visibility
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div class="col-md-6 col-sm-12 p-3">
+                                    <div class="d-flex flex-column align-items-start h-100"
+                                         style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                 style="width:36px; height:36px; border-radius:50%; background-color:#7847D9; margin-right:10px">
+                                                <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                            </div>
+                                            <p style="color:#1A202C; font-weight:600; font-size:1.1rem; margin-bottom:2px">
+                                                Full chatter tracking with activities
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div class="col-md-6 col-sm-12 p-3">
+                                    <div class="d-flex flex-column align-items-start h-100"
+                                         style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                 style="width:36px; height:36px; border-radius:50%; background-color:#7847D9; margin-right:10px">
+                                                <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                            </div>
+                                            <p style="color:#1A202C; font-weight:600; font-size:1.1rem; margin-bottom:2px">
+                                                Loan refusal and reset to draft options
+                                            </p>
+                                        </div>
+                                    </div>
+                                 </div>
+                                <!-- Salary Advance feature -->
+                                <div class="col-md-6 col-sm-12 p-3">
+                                    <div class="d-flex flex-column align-items-start h-100"
+                                         style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                 style="width:36px; height:36px; border-radius:50%; background-color:#7847D9; margin-right:10px">
+                                                <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                            </div>
+                                            <p style="color:#1A202C; font-weight:600; font-size:1.1rem; margin-bottom:2px">
+                                                Salary Advance with single-installment settlement
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Search & Filters feature -->
+                                <div class="col-md-6 col-sm-12 p-3">
+                                    <div class="d-flex flex-column align-items-start h-100"
+                                         style="padding:30px; border-radius:12px; background-color:#faf8ff">
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                 style="width:36px; height:36px; border-radius:50%; background-color:#7847D9; margin-right:10px">
+                                                <i class="fa fa-star" style="color:#fff; font-size:14px"></i>
+                                            </div>
+                                            <p style="color:#1A202C; font-weight:600; font-size:1.1rem; margin-bottom:2px">
+                                                Advanced search filters and grouping by employee, department, and status
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- RELEASES TAB -->
+                        <div class="tab-pane fade" id="releases" role="tabpanel" aria-labelledby="releases-tab">
+                            <div class="row pt-5 m-0">
+                                <div class="col-md-3">
+                                    <h4 style="font-size:16px; font-weight:600; color:#514F4F; margin:0; line-height:26px;">
+                                        Latest Release 19.0.1.0.0
+                                    </h4>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Industry Solutions -->
+            <section class="services-page">
+                <h2 class="section-title text-center">Industry Solutions</h2>
+                <p class="text-center mb-5" style="color: var(--text-color-light); font-size: 16px; max-width: 650px; margin: 0 auto 40px;">
+                    We deliver tailored Odoo ERP solutions across key verticals — helping businesses streamline operations, boost efficiency, and scale with confidence.
+                </p>
+                <div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <img src="./assets/icons/manufacturing-black.png" alt="Manufacturing" class="service-icon">
+                            <h4>Manufacturing</h4>
+                            <p>End-to-end production planning, BOM management, work orders, and quality control to optimize your manufacturing floor.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <img src="./assets/icons/ecom-black.png" alt="Retail & eCommerce" class="service-icon">
+                            <h4>Retail &amp; eCommerce</h4>
+                            <p>Unified POS, online store, inventory, and customer loyalty solutions for seamless omnichannel retail experiences.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <img src="./assets/icons/trading-black.png" alt="Trading & Distribution" class="service-icon">
+                            <h4>Trading &amp; Distribution</h4>
+                            <p>Streamlined purchase, sales, and warehouse management for trading companies handling multi-channel distribution.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <img src="./assets/icons/service-black.png" alt="Healthcare & Services" class="service-icon">
+                            <h4>Healthcare &amp; Services</h4>
+                            <p>Patient management, appointment scheduling, billing, and service delivery workflows built for healthcare providers.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <img src="./assets/icons/pos-black.png" alt="Logistics & Supply Chain" class="service-icon">
+                            <h4>Logistics &amp; Supply Chain</h4>
+                            <p>Real-time fleet tracking, route optimization, warehouse automation, and supply chain visibility for logistics operations.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <img src="./assets/icons/maintenance.png" alt="Construction" class="service-icon">
+                            <h4>Construction</h4>
+                            <p>Project costing, subcontractor management, material planning, and site progress tracking for construction businesses.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
+

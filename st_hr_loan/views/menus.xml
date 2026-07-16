@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main HR Loan Menu -->
+    <menuitem id="menu_st_hr_loan_root"
+              name="Hr Loan"
+              sequence="50"/>
+
+    <!-- Employee Requests Submenu -->
+    <menuitem id="menu_st_hr_loan_requests"
+              name="Employee Requests"
+              parent="menu_st_hr_loan_root"
+              sequence="10"/>
+
+    <!-- Employee Requests > Loans -->
+    <menuitem id="menu_st_hr_loan_all"
+              name="Loans"
+              parent="menu_st_hr_loan_requests"
+              action="action_st_hr_loan"
+              sequence="10"
+              groups="base.group_user"/>
+
+     <!-- Configuration -->
+    <menuitem id="menu_st_hr_loan_configuration"
+              name="Configuration"
+              parent="menu_st_hr_loan_root"
+              sequence="20"/>
+
+    <menuitem id="menu_st_hr_loan_type"
+              name="Loan Types"
+              parent="menu_st_hr_loan_configuration"
+              action="action_st_hr_loan_type"
+              sequence="10"/>
+
+</odoo>

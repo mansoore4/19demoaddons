@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_st_hr_loan_type_tree" model="ir.ui.view">
+        <field name="name">st.hr.loan.type.tree</field>
+        <field name="model">st.hr.loan.type</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="interest_rate"/>
+                <field name="max_amount"/>
+                <field name="is_salary_advance"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_st_hr_loan_type_form" model="ir.ui.view">
+        <field name="name">st.hr.loan.type.form</field>
+        <field name="model">st.hr.loan.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+<!--                        <field name="name"/>-->
+<!--                        <field name="interest_rate"/>-->
+<!--                        <field name="max_amount"/>-->
+
+                        <field name="name"/>
+                        <field name="is_salary_advance"/>
+                        <field name="interest_rate" invisible="is_salary_advance == True"/>
+                        <field name="max_amount" invisible="is_salary_advance == True"/>
+                    </group>
+                     <notebook  invisible="is_salary_advance == True">
+                        <page string="Required Documents">
+                            <field name="required_document_ids">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <field name="is_mandatory"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_st_hr_loan_type" model="ir.actions.act_window">
+        <field name="name">Loan Types</field>
+        <field name="res_model">st.hr.loan.type</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+</odoo>

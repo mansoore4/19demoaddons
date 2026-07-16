@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="module_category_hr_loan" model="ir.module.category">
+        <field name="name">HR Loan</field>
+        <field name="description">ST HR Loan access groups.</field>
+        <field name="sequence">15</field>
+    </record>
+
+    <!-- Employee: can create/submit their own loan requests -->
+    <record id="group_hr_loan_employee" model="res.groups">
+        <field name="name">HR Loan / Employee (Self)</field>
+    </record>
+
+    <!-- Manager: can approve / refuse loan requests -->
+    <record id="group_hr_loan_manager" model="res.groups">
+        <field name="name">HR Loan / Manager (Approve)</field>
+    </record>
+
+    <!-- Officer: can disburse, mark installments paid, close loans -->
+    <record id="group_hr_loan_officer" model="res.groups">
+        <field name="name">HR Loan / Officer (Disburse / Close)</field>
+    </record>
+
+</odoo>

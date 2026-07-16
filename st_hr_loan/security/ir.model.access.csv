@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_st_hr_loan_officer,access.st.hr.loan.officer,model_st_hr_loan,group_hr_loan_officer,1,1,1,1
+access_st_hr_loan_manager,access.st.hr.loan.manager,model_st_hr_loan,group_hr_loan_manager,1,1,1,0
+access_st_hr_loan_employee,access.st.hr.loan.employee,model_st_hr_loan,group_hr_loan_employee,1,1,1,0
+access_st_hr_loan_line_officer,access.st.hr.loan.line.officer,model_st_hr_loan_line,group_hr_loan_officer,1,1,1,1
+access_st_hr_loan_line_manager,access.st.hr.loan.line.manager,model_st_hr_loan_line,group_hr_loan_manager,1,1,1,1
+access_st_hr_loan_line_employee,access.st.hr.loan.line.employee,model_st_hr_loan_line,group_hr_loan_employee,1,0,0,0
+access_st_hr_loan_type_officer,access.st.hr.loan.type.officer,model_st_hr_loan_type,group_hr_loan_officer,1,1,1,1
+access_st_hr_loan_type_manager,access.st.hr.loan.type.manager,model_st_hr_loan_type,group_hr_loan_manager,1,1,1,0
+access_st_hr_loan_type_employee,access.st.hr.loan.type.employee,model_st_hr_loan_type,group_hr_loan_employee,1,0,0,0
+access_st_hr_loan_type_document_officer,access.st.hr.loan.type.document.officer,model_st_hr_loan_type_document,group_hr_loan_officer,1,1,1,1
+access_st_hr_loan_type_document_manager,access.st.hr.loan.type.document.manager,model_st_hr_loan_type_document,group_hr_loan_manager,1,1,1,0
+access_st_hr_loan_type_document_employee,access.st.hr.loan.type.document.employee,model_st_hr_loan_type_document,group_hr_loan_employee,1,0,0,0
+access_st_hr_loan_document_officer,access.st.hr.loan.document.officer,model_st_hr_loan_document,group_hr_loan_officer,1,1,1,1
+access_st_hr_loan_document_manager,access.st.hr.loan.document.manager,model_st_hr_loan_document,group_hr_loan_manager,1,1,1,1
+access_st_hr_loan_document_employee,access.st.hr.loan.document.employee,model_st_hr_loan_document,group_hr_loan_employee,1,1,1,0
